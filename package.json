@@ -1,0 +1,27 @@
+{
+  "name": "cst-3145-node",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cruxcodes/CST-3145-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cruxcodes/CST-3145-node/issues"
+  },
+  "homepage": "https://github.com/Cruxcodes/CST-3145-node#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "morgan": "^1.10.0",
+    "properties-reader": "^2.3.0"
+  }
+}
