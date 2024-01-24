@@ -39,8 +39,9 @@ async function start() {
 
     db = client.db("CST3145");
     // Start listening for incoming requests only after connecting to the database
-    app.listen(3000, function () {
-      console.log("Server listening on port 3000");
+    const port = process.env.PORT || 3000;
+    app.listen(port, function () {
+      console.log("App started on port: " + port);
     });
   } catch (err) {
     console.error(err);
@@ -49,7 +50,6 @@ async function start() {
 }
 // Call the start function to connect to the database and start the server
 start();
-
 
 /**This is the endpoint to verify if the image exists or not */
 app.get("/images/:imageName", async function (req, res, next) {
