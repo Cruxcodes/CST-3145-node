@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 
 const uri =
   "mongodb+srv://crusader:OmegaLevel@cst3145.ehobo2w.mongodb.net/?retryWrites=true&w=majority";
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -27,9 +27,7 @@ let db;
 
 /**This is the middleware logger*/
 app.use(function (request, response, next) {
-  // middleware logger
   console.log("In comes a request to: " + request.url);
-  // response.end("Hello, world!");
   next();
 });
 
@@ -52,16 +50,25 @@ async function start() {
 // Call the start function to connect to the database and start the server
 start();
 
+app.get("/search/collections/:collectionName", async function (req, res) {
+  try {
+    const searchTerm = req.query.q;
+    const results = await req.collection
+      .find({
+        $or: [
+          { subject: { $regex: searchTerm, $options: "i" } }, // Case-insensitive search for title
+          { location: { $regex: searchTerm, $options: "i" } }, // Case-insensitive search for location
+        ],
+      })
+      .toArray();
 
+    res.send(results);
+  } catch (err) {
+    return next(err);
+  }
+});
 
-
-// app.get("/search/collections/:collectionName", async function (req, res) {
-//   try {
-//     // await cli
-//   } catch (ex) {}
-// });
-
-
+/**This gets the collection */
 app.param("collectionName", function (req, res, next, collectionName) {
   req.collection = db.collection(collectionName);
   return next();
@@ -76,13 +83,6 @@ app.get("/collections/:collectionName", async function (req, res, next) {
     return next(err);
   }
 });
-
-// app.get("/search/collections/:collectionName", async function (req, res) {
-//   try {
-//     // await cli
-//   } catch (ex) {}
-// });
-
 
 // Express route for handling POST requests to insert into the collection
 app.post("/collections/:collectionName", async function (req, res, next) {
@@ -114,8 +114,6 @@ app.put("/collections/:collectionName/:id", async function (req, res, next) {
   }
 });
 
-
-
 /**This is the endpoint to verify if the image exists or not */
 app.get("/images/:imageName", async function (req, res, next) {
   var filePath = path.join(__dirname, "static", req.url);
@@ -135,5 +133,3 @@ app.get("/images/:imageName", async function (req, res, next) {
 app.use(function (req, res) {
   res.status(404).send("Image not found!");
 });
-
-
