@@ -28,7 +28,7 @@ let db;
 app.use(function (request, response) {
   // middleware logger
   console.log("In comes a request to: " + request.url);
-  response.end("Hello, world!");
+  // response.end("Hello, world!");
 });
 
 /** Connect to the database during the application startup */
