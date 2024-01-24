@@ -10,6 +10,7 @@ var app = express();
 app.use(cors());
 app.use(express.json());
 http.createServer(app);
+const port = process.env.PORT || 3000;
 
 const uri =
   "mongodb+srv://crusader:OmegaLevel@cst3145.ehobo2w.mongodb.net/?retryWrites=true&w=majority";
@@ -25,10 +26,11 @@ const client = new MongoClient(uri, {
 let db;
 
 /**This is the middleware logger*/
-app.use(function (request, response) {
+app.use(function (request, response,next ) {
   // middleware logger
   console.log("In comes a request to: " + request.url);
   // response.end("Hello, world!");
+  next();
 });
 
 /** Connect to the database during the application startup */
@@ -39,7 +41,6 @@ async function start() {
 
     db = client.db("CST3145");
     // Start listening for incoming requests only after connecting to the database
-    const port = process.env.PORT || 3000;
     app.listen(port, function () {
       console.log("App started on port: " + port);
     });
