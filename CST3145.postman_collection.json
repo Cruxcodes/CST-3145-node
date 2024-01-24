@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "f12be6db-c8bc-4a92-a4ca-0847388bfd89",
+		"name": "CST 3145",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25019892"
+	},
+	"item": [
+		{
+			"name": "POST ORDERS",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET LESSONS",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "PUT LESSON CORRECTIONS",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"icon\": \"fas fa-table\",\r\n    \"subject\": \"This jkjjkjk a test for the only way to do fdsfds\",\r\n    \"location\": \"Lindenwoork\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://cst3145-env.eba-s5bibdnn.us-east-1.elasticbeanstalk.com/collections/lessons/65ac3422bc31a20b702a614b",
+					"protocol": "http",
+					"host": [
+						"cst3145-env",
+						"eba-s5bibdnn",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"collections",
+						"lessons",
+						"65ac3422bc31a20b702a614b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET IMAGES",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"spaces\": 7\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://cst3145-env.eba-s5bibdnn.us-east-1.elasticbeanstalk.com/images/static-image-3.jpg",
+					"protocol": "http",
+					"host": [
+						"cst3145-env",
+						"eba-s5bibdnn",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"images",
+						"static-image-3.jpg"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

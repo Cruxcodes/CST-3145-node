@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "65aef5fc7267e348c5dcc4f8"
+  },
+  "name": "test",
+  "phoneNumber": "5154511555",
+  "lessons": [
+    {
+      "lesson_id": "65ac3422bc31a20b702a6150",
+      "spaceTaken": 2
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65b16e988e6b0f9581bb3d88"
+  },
+  "name": "bolu",
+  "phoneNumber": "62539832828",
+  "lessons": [
+    {
+      "lesson_id": "65ac3422bc31a20b702a614b",
+      "spaceTaken": 6
+    }
+  ]
+}]

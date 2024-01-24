@@ -1,0 +1,144 @@
+[{
+  "_id": {
+    "$oid": "65ac3422bc31a20b702a6149"
+  },
+  "id": 5,
+  "icon": "fas fa-table",
+  "subject": "Basic Studies",
+  "location": "Birmingham",
+  "price": 1000,
+  "spaces": 7,
+  "availableSpace": 0
+},
+{
+  "_id": {
+    "$oid": "65ac3422bc31a20b702a6150"
+  },
+  "id": 9,
+  "icon": "fas fa-table",
+  "subject": "Karate",
+  "location": "Auditorium",
+  "price": 2,
+  "spaces": 5,
+  "availableSpace": 0
+},
+{
+  "_id": {
+    "$oid": "65ac3422bc31a20b702a614b"
+  },
+  "id": 5,
+  "icon": "fas fa-table",
+  "subject": "Computer Science",
+  "location": "Lindenwoork",
+  "price": 100,
+  "spaces": 94,
+  "availableSpace": 0
+},
+{
+  "_id": {
+    "$oid": "65ac3422bc31a20b702a6148"
+  },
+  "id": 5,
+  "icon": "fas fa-table",
+  "subject": "Basic hhhh",
+  "location": "Birmingham",
+  "price": 500,
+  "spaces": 5,
+  "availableSpace": 0
+},
+{
+  "_id": {
+    "$oid": "65ac3422bc31a20b702a614a"
+  },
+  "id": 3,
+  "icon": "fas fa-table",
+  "subject": "Physics",
+  "location": "London",
+  "price": 500,
+  "spaces": 2,
+  "availableSpace": 0
+},
+{
+  "_id": {
+    "$oid": "65ac3422bc31a20b702a614c"
+  },
+  "id": 5,
+  "icon": "fas fa-table",
+  "subject": "Literature",
+  "location": "London",
+  "price": 10.3,
+  "spaces": 2,
+  "availableSpace": 0
+},
+{
+  "_id": {
+    "$oid": "65ac3422bc31a20b702a614e"
+  },
+  "id": 7,
+  "icon": "fas fa-table",
+  "subject": "Volleyball",
+  "location": "Gymnasium",
+  "price": 10,
+  "spaces": 15,
+  "availableSpace": 0
+},
+{
+  "_id": {
+    "$oid": "65ac3422bc31a20b702a614d"
+  },
+  "id": 6,
+  "icon": "fa-solid fa-pencil",
+  "subject": "Chemistry",
+  "location": "BasingStoke",
+  "price": 200,
+  "spaces": 5,
+  "availableSpace": 0
+},
+{
+  "_id": {
+    "$oid": "65ac3422bc31a20b702a614f"
+  },
+  "id": 8,
+  "icon": "fa-solid fa-pencil",
+  "subject": "Spanish",
+  "location": "Class 6",
+  "price": 5,
+  "spaces": 5,
+  "availableSpace": 0
+},
+{
+  "_id": {
+    "$oid": "65ac3422bc31a20b702a6151"
+  },
+  "id": 10,
+  "icon": "fa-solid fa-pencil",
+  "subject": "Medicine",
+  "location": "Italy",
+  "price": 1002,
+  "spaces": 5,
+  "availableSpace": 0
+},
+{
+  "_id": {
+    "$oid": "65ad3c729d6176384c89eceb"
+  },
+  "id": 1,
+  "icon": "fas fa-table",
+  "subject": "Membrandfsadfd",
+  "location": "Manchester",
+  "price": 500,
+  "spaces": 5,
+  "availableSpace": 0
+},
+{
+  "_id": {
+    "$oid": "65ad3d2b83ab2cab416b6b87"
+  },
+  "id": 1,
+  "icon": "fas fa-table",
+  "subject": "Membrandfsadfd",
+  "location": "Manchester",
+  "price": 500,
+  "spaces": 5,
+  "availableSpace": 0
+}]
