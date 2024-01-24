@@ -26,7 +26,7 @@ const client = new MongoClient(uri, {
 let db;
 
 /**This is the middleware logger*/
-app.use(function (request, response,next ) {
+app.use(function (request, response, next) {
   // middleware logger
   console.log("In comes a request to: " + request.url);
   // response.end("Hello, world!");
@@ -52,49 +52,37 @@ async function start() {
 // Call the start function to connect to the database and start the server
 start();
 
-/**This is the endpoint to verify if the image exists or not */
-app.get("/images/:imageName", async function (req, res, next) {
-  var filePath = path.join(__dirname, "static", req.url);
-  console.log(filePath);
-  fs.stat(filePath, function (err, fileInfo) {
-    if (err) {
-      next();
-      return;
-    }
-    if (fileInfo.isFile()) {
-      res.sendFile(filePath);
-    } else {
-      next();
-    }
-  });
-});
-app.use(function (req, res) {
-  res.status(404);
-  res.send("Image not found!");
-});
 
-//This is to get the list of all the values in the collection
-app.get("/collections/:collectionName", async function (req, res, next) {
-  try {
-    await client.connect();
-    const results = await req.collection.find({}).toArray();
-    res.send(results);
-    // res.end(results);
-  } catch (err) {
-    return next(err);
-  }
-});
 
-app.get("/search/collections/:collectionName", async function (req, res) {
-  try {
-    // await cli
-  } catch (ex) {}
-});
+
+// app.get("/search/collections/:collectionName", async function (req, res) {
+//   try {
+//     // await cli
+//   } catch (ex) {}
+// });
+
 
 app.param("collectionName", function (req, res, next, collectionName) {
   req.collection = db.collection(collectionName);
   return next();
 });
+
+//This is to get the list of all the values in the collection
+app.get("/collections/:collectionName", async function (req, res, next) {
+  try {
+    const results = await req.collection.find({}).toArray();
+    res.send(results);
+  } catch (err) {
+    return next(err);
+  }
+});
+
+// app.get("/search/collections/:collectionName", async function (req, res) {
+//   try {
+//     // await cli
+//   } catch (ex) {}
+// });
+
 
 // Express route for handling POST requests to insert into the collection
 app.post("/collections/:collectionName", async function (req, res, next) {
@@ -125,3 +113,27 @@ app.put("/collections/:collectionName/:id", async function (req, res, next) {
     next(err);
   }
 });
+
+
+
+/**This is the endpoint to verify if the image exists or not */
+app.get("/images/:imageName", async function (req, res, next) {
+  var filePath = path.join(__dirname, "static", req.url);
+  console.log(filePath);
+  fs.stat(filePath, function (err, fileInfo) {
+    if (err) {
+      next();
+      return;
+    }
+    if (fileInfo.isFile()) {
+      res.sendFile(filePath);
+    } else {
+      next();
+    }
+  });
+});
+app.use(function (req, res) {
+  res.status(404).send("Image not found!");
+});
+
+
