@@ -131,5 +131,5 @@ app.get("/images/:imageName", async function (req, res, next) {
   });
 });
 app.use(function (req, res) {
-  res.status(404).send("Image not found!");
+  res.status(404).send("Image has not been found!");
 });
